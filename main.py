@@ -442,7 +442,7 @@ def sample_file_upload():
        <div class="form-group">
             <label for="photo">Выберите файл</label>
             <input type="file" class="form-control-file" id="photo" name="file">
-            <img src="{url_for('static', filename='imgs/temp')}"
+            <img src="{url_for('static', filename='image/temp')}"
                     width="300" height="300">
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
@@ -453,7 +453,7 @@ def sample_file_upload():
         file = request.files['file']
         if file:
             path_to_file = os.path.dirname(__file__)
-            full_path = os.path.join(path_to_file, "static", "imgs")
+            full_path = os.path.join(path_to_file, "static", "image")
             file.save(os.path.join(full_path, "temp"))
             return redirect("/sample_file_upload")
 
